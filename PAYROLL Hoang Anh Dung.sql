@@ -62,7 +62,7 @@ VALUES('A1','1000','22000','20000'),('A2','1200','26400','23000'),('B1','600','1
 Use Quanlyhocsinh
 SELECT * from Employee 
 SELECT * from Numberofworking 
-SELECT * from Numberofworking 
+SELECT * from Salary 
 
 
 
