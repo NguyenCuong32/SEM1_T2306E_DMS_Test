@@ -32,7 +32,7 @@ Create table EmpoyeeSalary
 	EmployeeName nvarchar(64) not null,
 	Basic_Salary nvarchar(20) not null,
 	Gross_Salary nvarchar(20) not null,
-	Net_Salary nvarchar(20) not null,
+	Net_Salary int not null,
 	primary key (EmployeeName)
 )
 End
@@ -87,15 +87,17 @@ insert into EmpoyeeSalary
 	Net_Salary
 )
 Values
-(N'Nguyễn Văn A','1.000','22.000','20.000'),
-(N'Lê Thị Bình','1.200','26.400','23.000'),
-(N'Nguyễn Lan','600','13.200','12.000'),
-(N'Mai Tuấn Anh','500','11.000','10.000'),
-(N'Hà Thị Lan','500','11.000','10.000'),
-(N'Lê Tú Chinh','1.200','26.400','23.000'),
-(N'Trần Văn Toàn','500','11.000','10.000'),
-(N'Trần Văn Nam','1.200','26.400','23.000'),
-(N'Huỳnh Anh','1.200','26.400','23.000')
+(N'Nguyễn Văn A','1.000','22.000',20.000),
+(N'Lê Thị Bình','1.200','26.400',23.000),
+(N'Nguyễn Lan','600','13.200',12.000),
+(N'Mai Tuấn Anh','500','11.000',10.000),
+(N'Hà Thị Lan','500','11.000',10.000),
+(N'Lê Tú Chinh','1.200','26.400',23.000),
+(N'Trần Văn Toàn','500','11.000',10.000),
+(N'Trần Văn Nam','1.200','26.400',23.000),
+(N'Huỳnh Anh','1.200','26.400',23.000)
+
+drop table EmpoyeeSalary
 
 select * from EmpoyeeSalary
 
@@ -105,4 +107,5 @@ inner join EmployeeWorkingDay ed
 on ei.EmployeeCode = ed.EmployeeCode
 inner join EmpoyeeSalary es
 on ei.EmployeeName = es.EmployeeName
+group by ei.DepartmentCode
 order by ei.DepartmentCode asc
