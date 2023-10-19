@@ -1,0 +1,57 @@
+CREATE DATABASE bang_luong
+go
+USE bang_luong
+go
+CREATE TABLE nhan_vien(
+MSNV CHAR(8) NOT NULL,
+Tennhanvien NVARCHAR(30) NOT NULL,
+CONSTRAINT pk_NHANVIEN PRIMARY KEY(MSNV)
+)
+go
+CREATE TABLE bo_phan_nhan_vien(
+    makhoa CHAR(8) NOT NULL,
+    Tenbophan NVARCHAR(10) NOT NULL,
+    CONSTRAINT pk_BOPHANNHANVIEN PRIMARY KEY(makhoa)
+)
+go
+CREATE TABLE so_ngay(
+    ngaylamviec char(8) NOT NULL,
+    ngaynghicoluong  char(8) NOT NULL,
+    ngaynghikhongluong  char(8) NOT NULL,
+    CONSTRAINT pk_SONGAY PRIMARY KEY(ngaylamviec)
+)
+go
+CREATE TABLE BANG_LUONG(
+    MUCLUONGCOBAN CHAR(20) NOT NULL,
+    TONGLUONG CHAR(20) NOT NULL,
+    LUONGRONG CHAR(20)NOT NULL,
+    GHICHU NVARCHAR(50) NULL,
+     CONSTRAINT pk_BANGLUONG PRIMARY KEY(MUCLUONGCOBAN)
+)
+GO
+CREATE TABLE NGAYVALUONG(
+    IDNGAY CHAR(10) NOT NULL,
+    MUCLUONG CHAR(10) NOT NULL,
+     CONSTRAINT pk_NGAYVALUONG PRIMARY KEY(IDNGAY)
+)
+GO
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('A1','NGUYEN VAN A')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('A2','LE THI BINH')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('B1','NGUYEN LAN')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('D1','MAI TUAN ANH')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('C1','HA THI LAN')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('C2','LE TU CHINH')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('D2','TRAN VAN TOAN')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('A3','TRAN VAN NAM')
+INSERT INTO nhan_vien(MSNV,Tennhanvien)VALUES('B2','HUYNH ANH')
+
+
+INSERT INTO so_ngay(ngaylamviec,ngaynghicoluong,ngaynghikhongluong)VALUES('10','2','1')
+
+
+
+
+
+
+
+
