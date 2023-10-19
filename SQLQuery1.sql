@@ -61,13 +61,13 @@ insert into luong values
 ('A3',1.200 ,26.400 ,23.000),
 ('B2',1.200,26.400 ,23.000)
 
-create proc TONGLUONG
+create proc sumsalary
 as
 begin 
+
 select nv.DepartmentCode, sum(l.GrossSsalary)as tongluong from nhanvien nv
 inner join luong L on nv.EmployeeCode= l.EmployeeCode
-group by nv.DepartmentCode
+group by nv.DepartmentCode ORDER BY nv.DepartmentCode ASC
 end
-
-exec TONGLUONG
+exec sumsalary
 
